@@ -1,2 +1,2 @@
 # poetry-bot
-discord poetry bot using chatgpt API
+discord poetry bot using discord.js and chatgpt API
