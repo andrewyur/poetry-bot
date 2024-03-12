@@ -16,13 +16,19 @@ export const data = new SlashCommandBuilder()
 	.addStringOption(option =>
 		option.setName('subject')
 			.setDescription('what do you want the poem to be about?')
-			.setRequired(true),
+			.setRequired(true)
+			.setMaxLength(100),
 	);
 
 export async function execute(interaction) {
 	const subject = interaction.options.getString('subject');
 	const type = interaction.options.getString('type');
 	await interaction.deferReply();
-	const haiku = await completion(`write a ${type} on the given subject, with title`, subject);
-	interaction.editReply(haiku);
+	try {
+		const haiku = await completion(`write a ${type} on the given subject, with title`, subject);
+		interaction.editReply(haiku);
+	}
+	catch (error) {
+		interaction.editReply('it didnt work sorry \n try again maybe?');
+	}
 }
