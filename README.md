@@ -19,8 +19,6 @@ create a  `.env` file with:
 - commands must be exported from separate files inside the commands directory
 
 ## todo
-- docker restart on exit
-- alert when errors, send log files
-- github workflow to build and deploy
+- CI/CD
 - raspberry pi + ssh?
 

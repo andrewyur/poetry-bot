@@ -36,4 +36,4 @@ EXPOSE 443
 EXPOSE 80
 
 # Run the application.
-CMD yarn start
+CMD yarn run register && yarn start
