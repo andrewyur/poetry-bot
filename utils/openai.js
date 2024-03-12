@@ -14,6 +14,7 @@ export async function completion(role, prompt) {
 	return response.choices[0].message.content;
 }
 
+// probably wont use this one, very expensive
 export async function image(prompt) {
 	const openai = new OpenAI();
 

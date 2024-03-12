@@ -1,5 +1,6 @@
 # poetry-bot
-discord poetry bot using discord.js and chatgpt API
+discord poetry bot using discord.js in ES6 and the openai API.
+uses a basic docker configuration, and winston for error logging.
 
 ## instructions
 
@@ -12,12 +13,14 @@ create a  `.env` file with:
 
 `yarn start` to run the bot
 
+`docker compose up --build` to build and run the bot in a docker container
+
 `yarn run register` to register new commands
 - commands must be exported from separate files inside the commands directory
 
 ## todo
-- dockerize
+- docker restart on exit
+- alert when errors, send log files
 - github workflow to build and deploy
-- error logging + alerts
-- raspberry pi + ssh
+- raspberry pi + ssh?
 

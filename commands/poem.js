@@ -1,5 +1,8 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { completion } from '../openai.js';
+import { completion } from '../utils/openai.js';
+import { logger } from '../utils/logger.js';
+
+const childLogger = logger.child({ scope: 'error.js' });
 
 export const data = new SlashCommandBuilder()
 	.setName('poem')
@@ -29,6 +32,7 @@ export async function execute(interaction) {
 		interaction.editReply(haiku);
 	}
 	catch (error) {
-		interaction.editReply('it didnt work sorry \n try again maybe?');
+		childLogger.error(error);
+		await interaction.editReply('it didnt work sorry \n try again maybe?');
 	}
 }

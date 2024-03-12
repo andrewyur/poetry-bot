@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "register": "node commands.js",
+    "register": "node ./utils/commands.js",
     "start": "node app.js"
   },
   "dependencies": {
@@ -16,7 +16,8 @@
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "ngrok": "^5.0.0-beta.2",
-    "openai": "^4.28.4"
+    "openai": "^4.28.4",
+    "winston": "^3.12.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.25",
