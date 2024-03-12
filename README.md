@@ -17,6 +17,7 @@ create a  `.env` file with:
 
 ## todo
 - dockerize
+- github workflow to build and deploy
 - error logging + alerts
 - raspberry pi + ssh
 
