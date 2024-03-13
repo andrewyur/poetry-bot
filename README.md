@@ -27,5 +27,5 @@ run `docker image prune` to remove dangling images, should be run periodically
 
 ## todo
 - CI/CD (would need my own server)
-- raspberry pi + ssh?
+- raspberry pi + ssh? -> test 
 
