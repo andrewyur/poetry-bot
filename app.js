@@ -67,6 +67,10 @@ const childLogger = logger.child({ scope: 'app.js' });
 		}
 	}
 
+	// set bot status
+
+	client.user.setStatus('online');
+
 	// log in
 	client.login(process.env.DISCORD_TOKEN);
 
