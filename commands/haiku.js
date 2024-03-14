@@ -2,7 +2,7 @@ import { SlashCommandBuilder } from 'discord.js';
 import { completion } from '../utils/openai.js';
 import { logger } from '../utils/logger.js';
 
-const childLogger = logger.child({ scope: 'limerick.js' });
+const childLogger = logger.child({ scope: 'haiku.js' });
 
 export const data = new SlashCommandBuilder()
 	.setName('poem')
