@@ -14,8 +14,8 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 443:443
-      - 80:80
+      - 1043:443
+      - 1080:80
     volumes:
       - ./errors.log:/usr/src/app/errors.log
       - ./.env:/usr/src/app/.env
