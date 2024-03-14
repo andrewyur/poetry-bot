@@ -2,20 +2,11 @@ import { SlashCommandBuilder } from 'discord.js';
 import { completion } from '../utils/openai.js';
 import { logger } from '../utils/logger.js';
 
-const childLogger = logger.child({ scope: 'error.js' });
+const childLogger = logger.child({ scope: 'freeverse.js' });
 
 export const data = new SlashCommandBuilder()
-	.setName('poem')
-	.setDescription('have the bot write a haiku on the subject of your choice')
-	.addStringOption(option =>
-		option.setName('type')
-			.setDescription('the type of poem')
-			.setRequired(true)
-			.addChoices(
-				{ name: 'haiku', value: 'haiku' },
-				{ name: 'limerick', value: 'short limerick' },
-				{ name: 'free verse', value: 'short free verse poem' },
-			))
+	.setName('freeverse')
+	.setDescription('have the bot write a free verse poem on the subject of your choice')
 	.addStringOption(option =>
 		option.setName('subject')
 			.setDescription('what do you want the poem to be about?')
@@ -25,10 +16,9 @@ export const data = new SlashCommandBuilder()
 
 export async function execute(interaction) {
 	const subject = interaction.options.getString('subject');
-	const type = interaction.options.getString('type');
 	await interaction.deferReply();
 	try {
-		const haiku = await completion(`write a ${type} on the given subject, with title`, subject);
+		const haiku = await completion('write a short free verse poem on the given subject, supply a title surrounded by double asterisks', subject);
 		interaction.editReply(haiku);
 	}
 	catch (error) {
