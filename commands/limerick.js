@@ -18,8 +18,8 @@ export async function execute(interaction) {
 	const subject = interaction.options.getString('subject');
 	await interaction.deferReply();
 	try {
-		const haiku = await completion('write a limerick on the given subject, supply a title surrounded by double asterisks', subject);
-		interaction.editReply(haiku);
+		const limerick = await completion('write a limerick on the given subject, supply a title surrounded by double asterisks', subject);
+		interaction.editReply(limerick);
 	}
 	catch (error) {
 		childLogger.error(error);

@@ -3,11 +3,21 @@ import OpenAI from 'openai';
 export async function completion(role, prompt) {
 	const openai = new OpenAI();
 
-	const response = await openai.chat.completions.create({
-		messages: [
+	let input;
+	if (!prompt) {
+		input = [
+			{ role: 'system', content: role },
+		];
+	}
+	else {
+		input = [
 			{ role: 'system', content: role },
 			{ role: 'user', content: prompt },
-		],
+		];
+	}
+
+	const response = await openai.chat.completions.create({
+		messages: input,
 		model: 'gpt-3.5-turbo',
 	});
 
