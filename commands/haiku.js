@@ -20,7 +20,7 @@ export async function execute(interaction) {
 	await interaction.deferReply();
 	try {
 		const haiku = await completion(
-			"write a haiku on the given subject, supply a title surrounded by double asterisks",
+			"write a haiku on the given subject",
 			subject
 		);
 		interaction.editReply(haiku);
