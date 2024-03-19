@@ -1,11 +1,13 @@
 # poetry-bot
+
 discord poetry bot using discord.js in ES6 and the openai API.
 Uses a basic docker configuration, and winston for error logging.
 Mounts `.env` and `errors.log` as volumes.
 
 ## hosting instructions
 
-create a  `.env` file with: 
+create a `.env` file with:
+
 - DISCORD_TOKEN: your discord bot's client secret
 - APP_ID: your discord bot's application id
 - OPENAI_API_KEY: your openai api key (must be generated from a paid account)
@@ -23,9 +25,5 @@ run `docker image prune` to remove dangling images, should be run periodically
 `yarn start` to run the bot
 
 `yarn run register` to register new commands
+
 - commands must be exported from separate files inside the commands directory
-
-## todo
-- CI/CD (would need my own server)
-- raspberry pi + ssh? -> test 
-
