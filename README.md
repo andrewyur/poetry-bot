@@ -4,7 +4,7 @@ discord poetry bot using discord.js in ES6 and the openai API.
 Uses a basic docker configuration, and winston for error logging.
 Mounts `.env` and `errors.log` as volumes.
 
-## hosting instructions
+## Hosting instructions
 
 create a `.env` file with:
 
