@@ -18,7 +18,7 @@ run `docker compose up --build` to build and run the bot in a docker container
 
 run `docker image prune` to remove dangling images, should be run periodically
 
-## development instructions
+## Development instructions
 
 `yarn` to install modules
 
